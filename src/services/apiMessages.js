@@ -1,8 +1,10 @@
 import { BASE_BACKEND_URL } from "./constants";
 
 export async function wakeServer() {
-  await fetch(`${BASE_BACKEND_URL}`);
-  await fetch(`${BASE_BACKEND_URL}`);
+  try {
+    await fetch(`${BASE_BACKEND_URL}`);
+    await fetch(`${BASE_BACKEND_URL}`);
+  } catch {}
 }
 
 export async function sendTextMessage(message) {

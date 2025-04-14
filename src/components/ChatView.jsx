@@ -20,7 +20,7 @@ function ChatView() {
   return (
     <div
       ref={chatMessagesRef}
-      className="scrollbar-hidden flex grow flex-col gap-3 overflow-y-auto bg-[url(images/background/backgroundImage.svg)] bg-center p-2"
+      className="scrollbar-hidden flex grow flex-col gap-3 overflow-y-auto bg-[url(/images/background/backgroundImage.svg)] bg-center p-2"
     >
       {storedMessages.map((storedMessage) => (
         <ChatMessageElement
@@ -30,12 +30,12 @@ function ChatView() {
       ))}
 
       {isTyping && (
-        <div class="flex items-center space-x-1 self-start">
-          <span class="text-sm text-gray-500">Typing</span>
-          <div class="flex space-x-1">
-            <div class="h-2 w-2 animate-bounce rounded-full bg-gray-500 [animation-delay:-0.3s]"></div>
-            <div class="h-2 w-2 animate-bounce rounded-full bg-gray-500 [animation-delay:-0.15s]"></div>
-            <div class="h-2 w-2 animate-bounce rounded-full bg-gray-500"></div>
+        <div className="flex items-center space-x-1 self-start">
+          <span className="text-sm text-gray-500">Typing</span>
+          <div className="flex space-x-1">
+            <div className="h-2 w-2 animate-bounce rounded-full bg-gray-500 [animation-delay:-0.3s]"></div>
+            <div className="h-2 w-2 animate-bounce rounded-full bg-gray-500 [animation-delay:-0.15s]"></div>
+            <div className="h-2 w-2 animate-bounce rounded-full bg-gray-500"></div>
           </div>
         </div>
       )}
