@@ -4,7 +4,9 @@ export async function wakeServer() {
   try {
     await fetch(`${BASE_BACKEND_URL}`);
     await fetch(`${BASE_BACKEND_URL}`);
-  } catch {}
+  } catch {
+    console.log();
+  }
 }
 
 export async function sendTextMessage(message) {
