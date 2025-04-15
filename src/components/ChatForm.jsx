@@ -2,7 +2,8 @@ import { useRef, useState } from "react";
 import toast from "react-hot-toast";
 import { useLocalStorageMessages } from "../contexts/LocalStorageMessagesContext";
 import { useSendMessageState } from "../contexts/SendMessageStateContext";
-import { HiOutlineArrowRight } from "./Icons";
+import { HiOutlinePaperAirplane } from "./Icons";
+import UploadImageButton from "./UploadImageButton";
 
 function ChatForm() {
   // Holds the msaages the user types
@@ -69,11 +70,12 @@ function ChatForm() {
         value={textMessage}
         onChange={handleTextAreaOnChange}
       />
+      {!textMessage && <UploadImageButton />}
       <button
         onClick={sendMessage}
         className="bg-primary-500 dark:bg-dark-primary-700 focus:ring-primary-500 hover:bg-primary-400 cursor-pointer rounded-full border-none p-4 text-white transition-colors duration-300 focus:ring focus:ring-offset-2 focus:outline-none"
       >
-        <HiOutlineArrowRight />
+        <HiOutlinePaperAirplane />
         {/* sen */}
       </button>
     </form>
