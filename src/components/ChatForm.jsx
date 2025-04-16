@@ -28,9 +28,9 @@ function ChatForm() {
   async function sendMessage(e) {
     e.preventDefault();
 
-    let message;
-
     if (!textMessage) return;
+
+    let message;
 
     if (textMessage) {
       message = {
@@ -70,7 +70,7 @@ function ChatForm() {
         value={textMessage}
         onChange={handleTextAreaOnChange}
       />
-      {!textMessage && <UploadImageButton />}
+      {!textMessage && <UploadImageButton userId={userID} />}
       <button
         onClick={sendMessage}
         className="bg-primary-500 dark:bg-dark-primary-700 focus:ring-primary-500 hover:bg-primary-400 cursor-pointer rounded-full border-none p-4 text-white transition-colors duration-300 focus:ring focus:ring-offset-2 focus:outline-none"

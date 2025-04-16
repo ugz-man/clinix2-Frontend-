@@ -2,7 +2,7 @@ import { HiOutlinePhoto } from "./Icons";
 import Modal from "./Modal";
 import UploadImageView from "./UploadImageView";
 
-function UploadImageButton() {
+function UploadImageButton({ userId }) {
   function uploadImage(e) {
     e.preventDefault();
   }
@@ -20,7 +20,7 @@ function UploadImageButton() {
         </button>
       </Modal.Open>
       <Modal.Window name="upload-image-form" showCloseButton="true">
-       <UploadImageView />
+        <UploadImageView userId={userId} />
       </Modal.Window>
     </Modal>
   );

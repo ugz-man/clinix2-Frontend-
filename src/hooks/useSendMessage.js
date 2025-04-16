@@ -20,14 +20,6 @@ export function useSendMessage() {
       };
       setStoredMessages((prevMessages) => [...prevMessages, response]);
     },
-    // onError: (error) =>
-    //   toast.custom((t) => (
-    //     <div
-    //       className={`bg-white px-6 py-4 shadow-md transition-all duration-75 ease-in ${t.visible ? "ease-in" : "ease-out"}`}
-    //     >
-    //       {error.message}
-    //     </div>
-    //   )),
   });
 
   return { isPending, mutate };
