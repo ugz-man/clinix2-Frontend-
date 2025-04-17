@@ -59,3 +59,14 @@ export async function uploadImageToServer(imageFile) {
     throw new Error(error.message);
   }
 }
+
+export async function deleteUserMessages(userId) {
+  const response = await fetch(
+    `${BASE_BACKEND_URL}/api/v1/messages/${userId}`,
+    {
+      method: "DELETE",
+    },
+  );
+
+  return await response.json();
+}
