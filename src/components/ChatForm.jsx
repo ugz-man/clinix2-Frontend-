@@ -1,12 +1,11 @@
-import { useRef, useState, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import toast from "react-hot-toast";
 
 import { useLocalStorageMessages } from "../contexts/LocalStorageMessagesContext";
 import { useSendMessageState } from "../contexts/SendMessageStateContext";
+import { deleteUserMessages } from "../services/apiMessages";
 import { HiOutlinePaperAirplane } from "./Icons";
 import UploadImageButton from "./UploadImageButton";
-import { useMutation } from "@tanstack/react-query";
-import { deleteUserMessages } from "../services/apiMessages";
 
 function ChatForm() {
   // Holds the msaages the user types
@@ -22,9 +21,6 @@ function ChatForm() {
   //   The messages and function used to set the messages in the local storage
   const [_, setStoredMessages] = useLocalStorageMessages();
   const { isPending: isSending, mutate } = useSendMessageState();
-  const { mutate: deleteMessages } = useMutation({
-    mutationFn: deleteUserMessages,
-  });
 
   // Add a listener to delete all messages and local storage for this user
   // when the tap closes
@@ -32,7 +28,7 @@ function ChatForm() {
     function () {
       function handleBeforeUnload() {
         setStoredMessages([]);
-        deleteMessages(userID);
+        deleteUserMessages(userID);
       }
 
       window.addEventListener("beforeunload", handleBeforeUnload);
@@ -41,7 +37,7 @@ function ChatForm() {
         window.removeEventListener("beforeunload", handleBeforeUnload);
       };
     },
-    [deleteMessages, setStoredMessages, userID],
+    [setStoredMessages, userID],
   );
 
   // Functions

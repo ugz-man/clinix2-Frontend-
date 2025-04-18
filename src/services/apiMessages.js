@@ -61,12 +61,6 @@ export async function uploadImageToServer(imageFile) {
 }
 
 export async function deleteUserMessages(userId) {
-  const response = await fetch(
-    `${BASE_BACKEND_URL}/api/v1/messages/${userId}`,
-    {
-      method: "DELETE",
-    },
-  );
-
-  return await response.json();
+  console.log("called");
+  navigator.sendBeacon(`${BASE_BACKEND_URL}/api/v1/messages/${userId}`);
 }
