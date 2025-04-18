@@ -61,6 +61,5 @@ export async function uploadImageToServer(imageFile) {
 }
 
 export async function deleteUserMessages(userId) {
-  console.log("called");
   navigator.sendBeacon(`${BASE_BACKEND_URL}/api/v1/messages/${userId}`);
 }
