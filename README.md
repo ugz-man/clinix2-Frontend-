@@ -80,6 +80,7 @@ Highlight the most important features of your project:
 
 - **Demo Video Link:** [YouTube link](https://youtu.be/LW5WzR6uUpA)
 - **Pitch Deck / PPT Link:** [Google Slides](https://docs.google.com/presentation/d/19cMJ0Cdkkra6JOPxijubsUanCv6nwBXR9qvobqKTRpU/edit?usp=sharing)
+- **Deployment Link:** [Website](https://clinix2-frontend.vercel.app/)
 
 ---
 
